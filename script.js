@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
     'jfKfPfyJRdk': 'lofi hip hop radio 📚 - beats to relax/study to',
     '4xDzrJKXOOY': 'synthwave radio 🌌 - beats to chill/game to',
     'rUxyKA_-grg': 'lofi hip hop radio 💤 - beats to sleep/chill to',
-    'A_nRzRZQqv0': 'dark ambient radio 🌃 - music to escape/dream to'
+    'Z-qo1DCvCT0': 'dark ambient radio 🌃 - music to escape/dream to'
   };
 
   // Hide "Now Playing" section initially

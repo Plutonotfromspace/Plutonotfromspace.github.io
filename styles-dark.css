@@ -256,3 +256,52 @@ header h1 {
     }
   }
   
+  @media (max-width: 600px) {
+    /* Hide desktop version of the "Buy Me a Coffee" button */
+    #buyMeACoffee {
+      display: none;
+    }
+  
+    /* Mobile-friendly "Buy Me a Coffee" button */
+    .mobile-buy-me-coffee {
+      position: relative;
+      margin-top: 20px; /* Adjust the margin from the theme selector */
+      width: auto; /* Let the button adjust its width based on content */
+      display: inline-flex; /* Display as flex to align items */
+      align-items: center; /* Center items vertically */
+      justify-content: center; /* Center items horizontally */
+      background-color: #121212; /* Button background color - Dark Gray */
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+      font-size: 18px; /* Button font size */
+      color: #ffffff; /* Button text color - White */
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none; /* Remove default underline */
+    }
+  
+    .mobile-buy-me-coffee:hover {
+      background-color: #3700B3; /* Button hover background color - Dark Purple */
+    }
+  
+    .mobile-buy-me-coffee .material-symbols-outlined {
+      font-size: 24px; /* Adjust the icon size as needed */
+      margin-right: 8px; /* Adjust spacing between icon and text */
+    }
+  
+    .mobile-buy-me-coffee:hover {
+      text-decoration: underline; /* Underline text on hover */
+    }
+  }
+  
+  @media (min-width: 601px) {
+    /* Hide mobile version of the "Buy Me a Coffee" button on regular desktop screens */
+    .mobile-buy-me-coffee {
+      display: none;
+    }
+  }
+  
+  
+  
