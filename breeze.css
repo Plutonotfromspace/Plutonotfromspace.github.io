@@ -1,175 +1,302 @@
+/* Import VT323 font */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* Import ChronoType font */
+@font-face {
+  font-family: 'ChronoType';
+  src: url('/fonts/ChronoType.ttf') format('truetype');
+}
+
 /* Global styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5dc; /* Main background color - Beige */
-    color: #333333; /* Body text color - Charcoal Gray */
-  } 
-  
-  .container {
-    max-width: 800px;
-    margin: 50px auto;
-    background-color: #ffffff; /* Container background color - White */
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    position: relative;
+  font-family: 'VT323', monospace; /* Updated font-family */
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5dc; /* Main background color - Beige */
+  color: #333333; /* Body text color - Charcoal Gray */
+  font-size: 16px; /* Base font size - Updated */
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #ffffff; /* Container background color - White */
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+header {
+  background-color: #00bcd4; /* Header background color - Medium Cyan */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  color: #ffffff; /* Header text color - White */
+  font-size: 72px; /* Header font size - Updated */
+  font-family: 'ChronoType', sans-serif; /* Using ChronoType font */
+}
+
+.content {
+  padding: 20px;
+}
+
+.radio {
+  margin-bottom: 20px;
+}
+
+.radio input[type="radio"] {
+  display: none;
+}
+
+.radio label {
+  display: inline-block;
+  cursor: pointer;
+  margin: 5px 0; /* Adjust vertical margin */
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #87ceeb, #00bfff); /* Gradient background - Sky Blue to Deep Sky Blue */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Set a fixed width for the labels */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+  text-align: center; /* Center align the text */
+  font-size: 24px; /* Radio label font size - Updated */
+  font-weight: bold; 
+}
+
+.radio input[type="radio"]:checked + label {
+  background: linear-gradient(135deg, #00bfff, #1e90ff); /* Checked radio label gradient background - Deep Sky Blue to Dodger Blue */
+}
+
+.player {
+  text-align: center;
+  margin-bottom: 20px; /* Add margin */
+}
+
+.player #player {
+  height: 0;
+  width: 0;
+}
+
+/* Now Playing section styles */
+#nowPlaying {
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: #ffffcc; /* Now Playing background color - Pale Yellow */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 24px; /* Now Playing font size - Updated */
+}
+
+.marquee-container {
+  overflow: hidden;
+  width: 100%; /* Ensure full width for the marquee effect */
+}
+
+#stationName {
+  font-weight: bold;
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(110%);
   }
-  
-  header {
-    background-color: #00bcd4; /* Header background color - Medium Cyan */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 20px;
-    text-align: center;
+
+  100% {
+    transform: translateX(-110%); /* Increase the translation to ensure text moves off screen */
   }
-  
-  header h1 {
-    margin: 0;
-    color: #ffffff; /* Header text color - White */
-    font-size: 36px;
-  }
-  
-  .content {
-    padding: 20px;
-  }
-  
-  .radio {
-    margin-bottom: 20px;
-  }
-  
-  .radio input[type="radio"] {
+}
+
+/* CSS for "Buy Me a Coffee" button */
+#buyMeACoffee {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff69b4; /* Button background color - Hot Pink */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 18px; /* Button font size - Updated */
+  color: #ffffff; /* Button text color - White */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Remove default underline */
+}
+
+#buyMeACoffee:hover {
+  background-color: #ff1493; /* Button hover background color - Deep Pink */
+}
+
+#buyMeACoffee .material-symbols-outlined {
+  font-size: 24px; /* Adjust the icon size as needed */
+  margin-right: 8px; /* Adjust spacing between icon and text */
+}
+
+#buyMeACoffee:hover {
+  text-decoration: underline; /* Underline text on hover */
+}
+
+/* Styles for the theme select dropdown */
+.theme-dropdown {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.theme-dropdown label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333; /* Dark text color */
+}
+
+.theme-dropdown select {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #333; /* Dark border */
+  border-radius: 5px;
+  background-color: #fff; /* White background */
+  color: #333; /* Dark text color */
+  cursor: pointer;
+}
+
+.theme-dropdown select:hover {
+  background-color: #f0f0f0; /* Light gray background on hover */
+}
+
+/* About Me section styles */
+.about-me {
+  background-color: #ffffff; /* Background color - White */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Dark shadow */
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+.about-me h2 {
+  color: #333333; /* Header text color - White */
+  font-size: 32px; /* About Me header font size */
+  margin-bottom: 10px;
+  font-family: 'ChronoType', sans-serif;
+}
+
+.about-me p {
+  color: #333333; /* Body text color - Charcoal Gray */
+  font-size: 20px; /* About Me body font size */
+  line-height: 1.6;
+}  
+
+@media (max-width: 600px) {
+  /* Hide original theme select dropdown */
+  .theme-dropdown {
     display: none;
   }
-  
-  .radio label {
-    display: inline-block;
-    cursor: pointer;
-    margin: 5px 0; /* Adjust vertical margin */
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #87ceeb, #00bfff); /* Gradient background - Sky Blue to Deep Sky Blue */
+
+  /* Style for mobile-friendly theme select dropdown */
+  .mobile-theme-dropdown {
+    position: relative;
+    margin-top: 20px; /* Add some space between the "About Me" section and the dropdown */
+    width: calc(100% - 40px); /* Adjust the width */
+    margin: 20px auto; /* Center the dropdown */
+    background-color: #ffffff; /* Main background color - White */
+    border: 1px solid #333; /* Dark border */
     border-radius: 5px;
-    transition: background-color 0.3s ease;
-    width: 100%; /* Set a fixed width for the labels */
-    box-sizing: border-box; /* Include padding and border in the element's total width */
-    text-align: center; /* Center align the text */
-    font-size: 18px;
-    font-weight: bold; 
-  }
-  
-  .radio input[type="radio"]:checked + label {
-    background: linear-gradient(135deg, #00bfff, #1e90ff); /* Checked radio label gradient background - Deep Sky Blue to Dodger Blue */
-  }  
-  
-  .player {
-    text-align: center;
-    margin-bottom: 20px; /* Add margin */
-  }
-  
-  .player #player {
-    height: 0;
-    width: 0;
-  }
-  
-  /* Now Playing section styles */
-  #nowPlaying {
     overflow: hidden;
-    white-space: nowrap;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px;
-    background-color: #ffffcc; /* Now Playing background color - Pale Yellow */
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dark shadow */
   }
-  
-  .marquee-container {
-    overflow: hidden;
-    width: 100%; /* Ensure full width for the marquee effect */
-  }
-  
-  #stationName {
+
+  .mobile-theme-dropdown label {
+    font-size: 28px; /* Dropdown label font size */
     font-weight: bold;
-    display: inline-block;
-    animation: marquee 20s linear infinite;
+    color: #333333; /* Dark text color */
+    display: block;
+    margin: 10px 0;
+    padding: 0 10px;
+    background-color: #00bcd4; /* Header background color - Medium Cyan */
   }
-  
-  @keyframes marquee {
-    0% {
-      transform: translateX(110%);
-    }
-  
-    100% {
-      transform: translateX(-110%); /* Increase the translation to ensure text moves off screen */
-    }
-  }
-  
-  /* CSS for "Buy Me a Coffee" button */
-  #buyMeACoffee {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #ff69b4; /* Button background color - Hot Pink */
+
+  .mobile-theme-dropdown select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px; /* Dropdown select font size */
     border: none;
+    background-color: #ffffff; /* Main background color - White */
+    color: #333333; /* Dark text color */
+    cursor: pointer;
+    appearance: none; /* Remove default dropdown arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  .mobile-theme-dropdown select:hover {
+    background-color: #f0f0f0; /* Light gray background on hover */
+  }
+}
+
+@media (min-width: 601px) {
+  /* Hide mobile selector on regular desktop screens */
+  .mobile-theme-dropdown {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Hide desktop version of the "Buy Me a Coffee" button */
+  #buyMeACoffee {
+    display: none;
+  }
+
+  /* Mobile-friendly "Buy Me a Coffee" button */
+  .mobile-buy-me-coffee {
+    position: relative;
+    margin-top: 20px; /* Adjust the margin from the theme selector */
+    width: auto; /* Let the button adjust its width based on content */
+    display: inline-flex; /* Display as flex to align items */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    background-color: #ff69b4; /* Button background color - White */
+    border: 1px solid #0000001a; /* Button border - Medium Cyan */
     border-radius: 5px;
     padding: 10px 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    color: #ffffff; /* Button text color - White */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dark shadow */
+    font-size: 18px; /* Button font size */
+    color: #ffffff; /* Button text color - Charcoal Gray */
     cursor: pointer;
-    display: flex;
-    align-items: center;
     transition: background-color 0.3s ease;
     text-decoration: none; /* Remove default underline */
   }
-  
-  #buyMeACoffee:hover {
-    background-color: #ff1493; /* Button hover background color - Deep Pink */
+
+  .mobile-buy-me-coffee:hover {
+    background-color: #ff69b4; /* Button hover background color - Medium Cyan */
   }
-  
-  #buyMeACoffee .material-symbols-outlined {
+
+  .mobile-buy-me-coffee .material-symbols-outlined {
     font-size: 24px; /* Adjust the icon size as needed */
     margin-right: 8px; /* Adjust spacing between icon and text */
   }
-  
-  #buyMeACoffee:hover {
+
+  .mobile-buy-me-coffee:hover {
     text-decoration: underline; /* Underline text on hover */
   }
-  
-  /* Styles for the theme select dropdown */
-  .theme-dropdown {
-    position: fixed;
-    top: 20px;
-    right: 20px;
+}
+
+@media (min-width: 601px) {
+  /* Hide mobile version of the "Buy Me a Coffee" button on regular desktop screens */
+  .mobile-buy-me-coffee {
+    display: none;
   }
-  
-  .theme-dropdown label {
-    font-size: 14px;
-    font-weight: bold;
-    color: #333; /* Dark text color */
-  }
-  
-  .theme-dropdown select {
-    padding: 5px 10px;
-    font-size: 14px;
-    border: 1px solid #333; /* Dark border */
-    border-radius: 5px;
-    background-color: #fff; /* White background */
-    color: #333; /* Dark text color */
-    cursor: pointer;
-  }
-  
-  .theme-dropdown select:hover {
-    background-color: #f0f0f0; /* Light gray background on hover */
-  }
-  
-  @media (max-width: 600px) {
-    .container {
-      border-radius: 0;
-      box-shadow: none;
-    }
-  }
-  
+}
