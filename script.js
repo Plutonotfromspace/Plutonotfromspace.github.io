@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Function to handle player ready event
   function onPlayerReady(event) {
-    event.target.mute(); // Mute the video
     event.target.playVideo(); // Start playback
   }
 
@@ -85,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function applyTheme(theme) {
     // Remove existing theme classes from body
     document.body.classList.remove('dark-theme', 'breeze-theme', 'violet-theme');
-  
+
     // Remove existing theme stylesheets
     const darkThemeStyle = document.getElementById('dark-theme-style');
     if (darkThemeStyle) {
@@ -154,4 +153,5 @@ document.addEventListener("DOMContentLoaded", function() {
     const selectedTheme = this.value;
     applyTheme(selectedTheme);
   });
+
 });
