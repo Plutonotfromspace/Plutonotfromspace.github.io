@@ -1,10 +1,20 @@
+/* Import VT323 font */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* Import ChronoType font */
+@font-face {
+  font-family: 'ChronoType';
+  src: url('/fonts/ChronoType.ttf') format('truetype');
+}
+
 /* Global styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'VT323', monospace;
   margin: 0;
   padding: 0;
   background-color: #dce8f7; /* Main background color - Soft pastel blue */
   color: #757575; /* Body text color - Muted gray */
+  font-size: 16px; /* Adjust the font size for better readability */
 }
 
 .container {
@@ -27,7 +37,8 @@ header {
 header h1 {
   margin: 0;
   color: #423f3e; /* Header text color */
-  font-size: 36px;
+  font-size: 72px;
+  font-family: 'ChronoType', sans-serif;
 }
 
 .content {
@@ -53,7 +64,7 @@ header h1 {
   width: 100%; /* Set a fixed width for the labels */
   box-sizing: border-box; /* Include padding and border in the element's total width */
   text-align: center; /* Center align the text */
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold; 
 }
 
@@ -83,7 +94,8 @@ header h1 {
   background-color: #ffffcc; /* Now Playing background color - Pale yellow */
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 16px;
+  font-size: 24px;
+  width: 300px;
 }
 
 .marquee-container {
@@ -117,7 +129,7 @@ header h1 {
   border-radius: 5px;
   padding: 10px 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 16px;
+  font-size: 18px;
   color: #808080; /* Button text color - Soft gray */
   cursor: pointer;
   display: flex;
@@ -147,7 +159,7 @@ header h1 {
 }
 
 .theme-dropdown label {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   color: #333; /* Dark text color */
 }
@@ -164,6 +176,29 @@ header h1 {
 
 .theme-dropdown select:hover {
   background-color: #f0f0f0; /* Light gray background on hover */
+}
+
+/* About Me section styles */
+.about-me {
+  background-color: #f3e6f7; /* Background color - Soft pastel purple */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+.about-me h2 {
+  color: #7a4171; /* Header text color - Dark purple */
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-family: 'ChronoType', sans-serif;
+}
+
+.about-me p {
+  color: #4f4f4f; /* Body text color - Dark gray */
+  font-size: 20px;
+  line-height: 1.6;
 }
 
 @media (max-width: 600px) {
