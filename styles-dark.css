@@ -1,0 +1,176 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Background color - Dark Gray */
+    color: #ffffff; /* Text color on background */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #121212; /* Container background color - Dark Gray */
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+header {
+    background-color: #3700B3; /* Dark header background color */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #ffffff; /* Text color on header */
+    font-size: 36px;
+}
+
+.content {
+    padding: 20px;
+}
+
+.radio {
+    margin-bottom: 20px;
+}
+
+.radio input[type="radio"] {
+    display: none;
+}
+
+.radio label {
+    display: inline-block;
+    cursor: pointer;
+    margin: 5px 0; /* Adjust vertical margin */
+    padding: 10px 20px;
+    background-color: #3700B3; /* Radio label background color - Dark header background color */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Set a fixed width for the labels */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    text-align: center; /* Center align the text */
+    font-size: 18px;
+    font-weight: bold; 
+}
+
+.radio input[type="radio"]:checked + label {
+    background-color: #03DAC6; /* Checked radio label background color - Secondary */
+}
+
+.player {
+    text-align: center;
+    margin-bottom: 20px; /* Add margin */
+}
+
+.player #player {
+    height: 0;
+    width: 0;
+}
+
+/* Now Playing section styles */
+#nowPlaying {
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: #121212; /* Now Playing background color - Dark Gray */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    font-size: 16px;
+}
+
+.marquee-container {
+    overflow: hidden;
+    width: 100%; /* Ensure full width for the marquee effect */
+}
+
+#stationName {
+    font-weight: bold;
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(110%);
+    }
+
+    100% {
+        transform: translateX(-110%); /* Increase the translation to ensure text moves off screen */
+    }
+}
+
+/* CSS for "Buy Me a Coffee" button */
+#buyMeACoffee {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #03DAC6; /* Button background color - Secondary */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    font-size: 16px;
+    color: #000000; /* Button text color - Text color on primary */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove default underline */
+}
+
+#buyMeACoffee:hover {
+    background-color: #00bfa5; /* Button hover background color - Slightly darker shade of secondary */
+}
+
+#buyMeACoffee .material-symbols-outlined {
+    font-size: 24px; /* Adjust the icon size as needed */
+    margin-right: 8px; /* Adjust spacing between icon and text */
+}
+
+#buyMeACoffee:hover {
+    text-decoration: underline; /* Underline text on hover */
+}
+
+css
+
+/* Styles for the theme select dropdown */
+.theme-dropdown {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-dropdown label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff; /* Light text color - On Background */
+}
+
+.theme-dropdown select {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ffffff; /* Light border - On Background */
+    border-radius: 5px;
+    background-color: #121212; /* Background color - Dark Gray */
+    color: #ffffff; /* Light text color - On Background */
+    cursor: pointer;
+}
+
+.theme-dropdown select:hover {
+    color: #000000; /* Dark text color - On Primary */
+}
+
+@media (max-width: 600px) {
+    .container {
+        border-radius: 0;
+        box-shadow: none;
+    }
+}

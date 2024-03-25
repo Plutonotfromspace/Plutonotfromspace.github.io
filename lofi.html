@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lofi Radio Player</title>
+<link rel="stylesheet" href="styles.css">
+<!-- Include Google Fonts Material Symbols Outlined -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Lofi Radio Player</h1>
+  </header>
+  <!-- Theme select dropdown -->
+  <div class="theme-dropdown">
+    <label for="themeSelect">Select Theme:</label>
+    <select id="themeSelect">
+      <option value="default">Coral Cream</option>
+      <option value="dark">Dark</option>
+      <option value="breeze.css">Azure Breeze</option>
+      <option value="violet.css">Violet Symphony</option>
+      <!-- Add more theme options here as needed -->
+    </select>
+  </div>
+  <div class="content">
+    <div class="radio">
+      <input type="radio" id="station1" name="station" value="jfKfPfyJRdk">
+      <label for="station1">lofi hip hop radio 📚 - beats to relax/study to</label>
+      <input type="radio" id="station2" name="station" value="4xDzrJKXOOY">
+      <label for="station2">synthwave radio 🌌 - beats to chill/game to</label>
+      <input type="radio" id="station3" name="station" value="rUxyKA_-grg">
+      <label for="station3">lofi hip hop radio 💤 - beats to sleep/chill to</label>
+      <input type="radio" id="station4" name="station" value="A_nRzRZQqv0">
+      <label for="station4">dark ambient radio 🌃 - music to escape/dream to</label>
+    </div>
+    <div class="player">
+      <div id="player"></div>
+    </div>
+    <div id="nowPlaying">
+      <span id="stationName">Now Playing: lofi hip hop radio 📚 - beats to relax/study to</span>
+    </div>
+  </div>
+</div>
+
+<!-- "Buy Me a Coffee" button with coffee cup icon -->
+<a id="buyMeACoffee" href="https://www.buymeacoffee.com/yourusername" target="_blank" rel="noopener noreferrer">
+  <span class="material-symbols-outlined">coffee</span>
+  Buy me a coffee
+</a>
+
+<script src="script.js"></script> <!-- Ensure the script is loaded -->
+</body>
+</html>
