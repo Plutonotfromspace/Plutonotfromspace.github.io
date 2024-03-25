@@ -220,12 +220,12 @@ header h1 {
   margin-top: 20px; /* Add some space between widgets and other content */
   background-image: url('https://media1.tenor.com/m/GiO4XNKti44AAAAd/retrowave-synthwave.gif'); /* Background image */
   background-size: cover; /* Cover the entire container */
-  padding: 20px; /* Padding around the widgets */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
-  max-width: 400px; /* Limit width to prevent stretching */
+  padding: 40px; /* Padding around the widgets */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  max-width: 600px; /* Limit width to prevent stretching */
   margin: 20px auto; /* Center the container */
-  height: 200px; /* Fixed height for the container */
+  height: 250px; /* Fixed height for the container */
   position: relative; /* Position relative for absolute positioning of overlay */
 }
 
@@ -238,18 +238,20 @@ header h1 {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-  border-radius: 10px; /* Rounded corners */
+  border-radius: 20px; /* Rounded corners */
 }
 
 /* Text inside the widgets container */
 .widgets #current-time,
+.widgets #time-tracker,
 .widgets #current-weather {
   color: #fff; /* Text color */
-  font-size: 20px; /* Font size */
+  font-size: 24px; /* Font size */
   font-weight: bold; /* Bold font weight */
-  text-align: center; /* Center align text */
+  text-align: left; /* Center align text */
   position: relative; /* Position relative for stacking */
   z-index: 1; /* Ensure text is above the overlay */
+  margin-bottom: 20px;
 }
 
 @media (max-width: 600px) {

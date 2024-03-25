@@ -1,3 +1,37 @@
+// Function to format time
+function formatTime(totalSeconds) {
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    
+    let timeString = '';
+
+    if (hours > 0) {
+        timeString += `${hours}h `;
+    }
+
+    if (minutes > 0 || hours > 0 || seconds > 0) {
+        timeString += `${minutes}m `;
+    }
+
+    timeString += `${seconds}s`;
+
+    return timeString;
+}
+
+// Function to track time spent on the website
+function trackTime() {
+    let totalTime = parseInt(localStorage.getItem('totalTime')) || 0;
+    setInterval(() => {
+        totalTime += 1; // Increment total time by 1 second
+        localStorage.setItem('totalTime', totalTime); // Save updated total time in localStorage
+        const timeTrackerElement = document.getElementById('time-tracker');
+        if (timeTrackerElement) {
+            timeTrackerElement.textContent = 'Time Spent Listening: ' + formatTime(totalTime);
+        }
+    }, 1000); // Update every second
+}
+
 // Function to fetch and display weather based on user's location
 function displayWeather(latitude, longitude) {
     const apiKey = '78eef14f511e4ca387f210340242503';
@@ -35,7 +69,7 @@ function displayTime() {
     const timeString = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
     const timeElement = document.getElementById('current-time');
     if (timeElement) {
-        timeElement.textContent = `Current time: ${timeString}`;
+        timeElement.textContent = `${timeString}`;
     }
 }
 
@@ -72,6 +106,7 @@ function initWidgets() {
     }
 
     displayTime(); // Display current time initially
+    trackTime(); // Start tracking time
 
     // Set interval to update time every minute (60000 milliseconds)
     setInterval(displayTime, 1000);
