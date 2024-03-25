@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Theme select dropdown
   const themeSelect = document.getElementById('themeSelect');
+  const mobileThemeSelect = document.getElementById('mobileThemeSelect'); // Get the mobile theme select dropdown
 
   // Function to apply selected theme
   function applyTheme(theme) {
@@ -150,6 +151,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Event listener for theme select change
   themeSelect.addEventListener('change', function() {
+    const selectedTheme = this.value;
+    applyTheme(selectedTheme);
+  });
+
+  // Event listener for mobile theme select change
+  mobileThemeSelect.addEventListener('change', function() {
     const selectedTheme = this.value;
     applyTheme(selectedTheme);
   });

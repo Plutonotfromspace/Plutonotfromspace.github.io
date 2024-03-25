@@ -202,9 +202,57 @@ header h1 {
     line-height: 1.6;
   }  
 
-@media (max-width: 600px) {
-  .container {
-    border-radius: 0;
-    box-shadow: none;
+  @media (max-width: 600px) {
+    /* Hide original theme select dropdown */
+    .theme-dropdown {
+      display: none;
+    }
+  
+    /* Style for mobile-friendly theme select dropdown */
+    .mobile-theme-dropdown {
+      position: relative;
+      margin-top: 20px; /* Add some space between the "About Me" section and the dropdown */
+      width: calc(100% - 40px); /* Adjust the width */
+      margin: 20px auto; /* Center the dropdown */
+      background-color: #121212; /* Main background color - Dark Gray */
+      border: 1px solid #333; /* Dark border */
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Light shadow */
+    }
+  
+    .mobile-theme-dropdown label {
+      font-size: 28px; /* Dropdown label font size */
+      font-weight: bold;
+      color: #ffffff; /* Header text color - White */
+      display: block;
+      margin: 10px 0;
+      padding: 0 10px;
+      background-color: #3700B3; /* Header background color - Dark Purple */
+    }
+  
+    .mobile-theme-dropdown select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px; /* Dropdown select font size */
+      border: none;
+      background-color: #121212; /* Main background color - Dark Gray */
+      color: #ffffff; /* Body text color - White */
+      cursor: pointer;
+      appearance: none; /* Remove default dropdown arrow */
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+  
+    .mobile-theme-dropdown select:hover {
+      background-color: #3700B3; /* Header background color - Dark Purple */
+    }
   }
-}
+  
+  @media (min-width: 601px) {
+    /* Hide mobile selector on regular desktop screens */
+    .mobile-theme-dropdown {
+      display: none;
+    }
+  }
+  
