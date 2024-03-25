@@ -1,7 +1,7 @@
 // Function to fetch and display weather based on user's location
 function displayWeather(latitude, longitude) {
     const apiKey = '78eef14f511e4ca387f210340242503';
-    const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`;
+    const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`;
 
     fetch(url)
         .then(response => {
