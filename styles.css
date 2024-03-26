@@ -19,7 +19,7 @@ body {
 
 .container {
   max-width: 800px;
-  margin: 50px auto;
+  margin: 20px auto;
   background-color: #f9f7f3; /* Container background color - Light cream */
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -46,7 +46,7 @@ header h1 {
 }
 
 .radio {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .radio input[type="radio"] {
@@ -184,8 +184,7 @@ header h1 {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  max-width: 400px;
+  width: 400px;
 }
 
 .about-me h2 {
@@ -199,6 +198,14 @@ header h1 {
   color: #4f4f4f; /* Body text color - Dark gray */
   font-size: 20px;
   line-height: 1.6;
+}
+
+
+/* Additional styles for the side-by-side layout */
+.side-content {
+  display: flex; /* Use flexbox to arrange the content side by side */
+  justify-content: center; /* Space items evenly */
+  margin-top: 20px;
 }
 
 /* Styles for the current time widget */
@@ -217,16 +224,15 @@ header h1 {
 
 /* Container for widgets */
 .widgets {
-  margin-top: 20px; /* Add some space between widgets and other content */
+  position: relative;
   background-image: url('https://media1.tenor.com/m/GiO4XNKti44AAAAd/retrowave-synthwave.gif'); /* Background image */
   background-size: cover; /* Cover the entire container */
   padding: 40px; /* Padding around the widgets */
   border-radius: 20px; /* Rounded corners */
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
-  max-width: 600px; /* Limit width to prevent stretching */
-  margin: 20px auto; /* Center the container */
-  height: 250px; /* Fixed height for the container */
-  position: relative; /* Position relative for absolute positioning of overlay */
+  width: 300px; /* Adjusted width */
+  margin-left: 20px; 
+  display: inline-block; 
 }
 
 /* Overlay for backdrop */
@@ -399,6 +405,29 @@ header h1 {
   /* Hide mobile version of the "Buy Me a Coffee" button on regular desktop screens */
   .mobile-buy-me-coffee {
     display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .side-content {
+    display: block; /* Change to block to stack vertically */
+    text-align: center;
+  }
+
+  .about-me {
+    width: 100%; /* Set width to 100% */
+    max-width: none; /* Remove max-width */
+    padding: 20px; /* Adjust padding if necessary */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    text-align: left;
+  }
+
+  .widgets {
+    margin: 20px auto; /* Center the .about-me section */
+    padding: 40px; /* Adjust padding if necessary */
+    height: 250px;
+    background-size: cover;
+    display: inline-block;
   }
 }
 
