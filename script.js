@@ -60,6 +60,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
+  // Function to play sound effect
+  function playSoundEffect() {
+    const audio = new Audio('https://www.soundjay.com/communication/sounds/cassette-player-button-1.mp3');
+    audio.play();
+  }
+
+  // Event listener for radio station change
+  radioStations.forEach(function(radio) {
+    radio.addEventListener("change", function() {
+      initializePlayer(this.value);
+      playSoundEffect(); // Call the function to play the sound effect
+    });
+  });
+
   // Station name mapping
   const stationNameMap = {
     'jfKfPfyJRdk': 'lofi hip hop radio 📚 - beats to relax/study to',
@@ -162,3 +176,4 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 });
+
